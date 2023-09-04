@@ -1,51 +1,98 @@
-@import '~node_modules/modern-normalize/modern-normalize.css';
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #ffffff;
+  color: black;
+  padding: 15px;
+}
+
+h2,
+p {
+  margin: 0;
+}
+img {
+  display: block;
+  height: auto;
+}
+
+.is-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.breed-select {
+  max-width: 200px;
+}
+
+.cat-info {
+  padding-top: 20px;
+  display: flex;
+  gap: 20px;
+}
+
+.descr-part {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 700px;
+}
+
+.cat-name {
+  font-size: 30px;
+}
+
+.deskr-text {
+  font-size: 20px;
+  letter-spacing: 0.5px;
+}
+
+.span-temperament {
+  font-weight: 600;
+}
+
+.cat-temperament {
+  font-size: 20px;
+}
 
 .loader {
+  margin-left: 60px;
+  margin-top: 30px;
   width: 48px;
   height: 48px;
-  border: 5px solid #000000;
-  border-bottom-color: transparent;
   border-radius: 50%;
   display: inline-block;
+  border-top: 4px solid #fff;
+  border-right: 4px solid transparent;
   box-sizing: border-box;
-  /* animation: rotation 1s linear infinite; */
+  animation: rotation 1s linear infinite;
+}
+
+.loader::after {
+  content: '';
+  box-sizing: border-box;
   position: absolute;
-  top: 40%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  left: 0;
+  top: 0;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border-left: 4px solid #ff3d00;
+  border-bottom: 4px solid transparent;
+  animation: rotation 0.5s linear infinite reverse;
 }
 
 @keyframes rotation {
   0% {
     transform: rotate(0deg);
   }
-
   100% {
     transform: rotate(360deg);
   }
-}
-
-.text-div-description {
-  font-size: 20px;
-  width: 450px;
-}
-
-.text-div-title {
-  font-size: 40px;
-}
-
-.text-div {
-  margin-right: 40px;
-}
-
-.cat-info {
-  padding-top: 170px;
-  align-items: center;
-  justify-content: center;
-  display: flex;
-}
-
-.text-div-temperament {
-  width: 450px;
-  font-size: 18px;
 }
